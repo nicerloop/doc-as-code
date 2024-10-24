@@ -1,0 +1,6 @@
+# https://git-scm.com/docs/gitignore
+.tmp/
+*.html
+*.pdf
+*.docx
+*.pptx

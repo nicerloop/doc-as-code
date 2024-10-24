@@ -1,0 +1,6 @@
+#!/bin/sh
+docname=$(dirname "$1")/$(basename "$1" .adoc)
+asciidoctor "$docname.adoc" --attribute outdir=.tmp \
+    --require asciidoctor-diagram --attribute imagesoutdir=.tmp \
+    --backend pdf --require asciidoctor-pdf --attribute imagesdir=.tmp \
+    --out-file "$docname.pdf"

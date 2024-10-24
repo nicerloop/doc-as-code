@@ -1,0 +1,18 @@
+= Title
+:toc: auto
+
+== Header 1
+
+Some text with *bold* and _italic_ text.
+
+A list with links:
+
+* first http://example.net[link]
+* second http://example.org[link]
+
+=== Header 2
+
+[plantuml, diagram, svg]
+----
+include::diagram.puml[]
+----

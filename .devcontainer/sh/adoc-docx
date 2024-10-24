@@ -1,0 +1,9 @@
+#!/bin/sh
+docname=$(dirname "$1")/$(basename "$1" .adoc)
+asciidoctor "$docname.adoc" --attribute outdir=.tmp \
+    --require asciidoctor-diagram --attribute imagesoutdir=.tmp \
+    --backend docbook --attribute imagesdir=.tmp \
+    --out-file - \
+    | pandoc --from docbook \
+    --to docx --table-of-contents \
+    --output "$docname.docx"

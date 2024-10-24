@@ -1,0 +1,12 @@
+services:
+  devcontainer:
+    image: doc_a_code:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/documents:cached
+    # Overrides default command so things don't shut down after the process ends.
+    command: sleep infinity
+    # Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+    # user: root

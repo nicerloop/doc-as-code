@@ -1,0 +1,6 @@
+#!/bin/sh
+docname=$(dirname "$1")/$(basename "$1" .adoc)
+asciidoctor "$docname.adoc" --attribute outdir=.tmp \
+    --require asciidoctor-diagram --attribute imagesoutdir=.tmp \
+    --backend html5 --attribute imagesdir=.tmp --attribute diagram-svg-type=inline \
+    --out-file "$docname.html"

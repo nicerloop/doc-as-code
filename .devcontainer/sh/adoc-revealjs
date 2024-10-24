@@ -1,0 +1,6 @@
+#!/bin/sh
+docname=$(dirname "$1")/$(basename "$1" .adoc)
+asciidoctor "$docname.adoc" --attribute outdir=.tmp \
+    --require asciidoctor-diagram --attribute imagesoutdir=.tmp \
+    --backend revealjs --require asciidoctor-revealjs --attribute imagesdir=../.tmp --attribute revealjsdir=https://cdn.jsdelivr.net/npm/reveal.js@4.6.1 \
+    --out-file "$docname.html"

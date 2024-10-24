@@ -1,0 +1,3 @@
+#!/bin/sh
+docname=$(dirname "$1")/$(basename "$1" .html)
+decktape "$docname.html" "$docname.pdf"

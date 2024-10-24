@@ -1,0 +1,26 @@
+= Slideshow
+Author <email @ddress>
+version, date
+:toc:
+:revealjs_theme: beige
+
+== Heading 1
+
+[.stretch]
+[plantuml, diagram, svg]
+----
+include::diagram.puml[]
+----
+
+[.notes]
+--
+speaker notes
+--
+
+=== Heading 2
+
+Bullet list
+
+* item 1
+* item 2
+* item 3

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# The --no-sandbox option is required, or --cap-add=SYS_ADMIN to docker run command
+# https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md#running-puppeteer-in-docker
+# https://github.com/GoogleChrome/puppeteer/issues/290
+# https://github.com/jessfraz/dockerfiles/issues/65
+# https://github.com/jessfraz/dockerfiles/issues/156
+# https://github.com/jessfraz/dockerfiles/issues/341
+
+node /decktape/decktape.js --chrome-path /usr/bin/chromium-browser --chrome-arg=--no-sandbox --chrome-arg=--disable-gpu "$@"

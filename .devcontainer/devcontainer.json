@@ -1,0 +1,36 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/dotnet-mssql
+{
+	"name": "Documentation as code: Asciidoctor & Pandoc",
+	"dockerComposeFile": "compose.yml",
+	"service": "devcontainer",
+	"workspaceFolder": "/documents",
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"asciidoctor.asciidoctor-vscode",
+				"jebbs.plantuml",
+				"tintinweb.graphviz-interactive-preview",
+				"ChrisChinchilla.vscode-pandoc",
+				"ms-vscode.live-server",
+				"mathematic.vscode-pdf",
+				"ShahilKumar.docxreader",
+				"jock.svg"
+			]
+		},
+		// Set *default* container specific settings.json values on container create.
+		"settings": {
+			"terminal.integrated.shell.linux": "/bin/ash",
+			"asciidoc.asciidoctor_command": "asciidoctor -r asciidoctor-diagram -r asciidoctor-pdf-cjk -a outdir=.adoc -a imagesdir=.adoc -a imagesoutdir=.adoc",
+			"asciidoc.asciidoctorpdf_command": "asciidoctor-pdf -r asciidoctor-diagram -r asciidoctor-pdf-cjk -a outdir=.adoc",
+			"asciidoc.preview.openAsciiDocLinks": "inEditor",
+			"asciidoc.use_asciidoctor_js": false,
+			"asciidoc.use_asciidoctorpdf": true
+		}
+	}
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
